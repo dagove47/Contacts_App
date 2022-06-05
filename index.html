@@ -35,7 +35,7 @@
                 <div class="card mb-3">
                     <div class="card-section g-0">
                         <div class="col-md-2 card-div-img">
-                            <img src="https://iconarchive.com/download/i86044/graphicloads/100-flat-2/contacts.ico" alt="...">
+                            <img src="/Assets/contact-icon.ico" alt="Contact icon">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -55,7 +55,7 @@
                 <div class="card mb-3">
                     <div class="card-section g-0">
                         <div class="col-md-2 card-div-img">
-                            <img src="https://iconarchive.com/download/i86044/graphicloads/100-flat-2/contacts.ico" alt="...">
+                            <img src="/Assets/contact-icon.ico" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -74,7 +74,7 @@
                 <div class="card mb-3">
                     <div class="card-section g-0">
                         <div class="col-md-2 card-div-img">
-                            <img src="https://iconarchive.com/download/i86044/graphicloads/100-flat-2/contacts.ico" alt="...">
+                            <img src="/Assets/contact-icon.ico" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -93,7 +93,45 @@
                 <div class="card mb-3">
                     <div class="card-section g-0">
                         <div class="col-md-2 card-div-img">
-                            <img src="https://iconarchive.com/download/i86044/graphicloads/100-flat-2/contacts.ico" alt="...">
+                            <img src="/Assets/contact-icon.ico" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
+                                <p class="card-text mb-1">5512469451</p>
+                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
+                                <p class="card-text mb-1">Hamburg</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 card-edit">
+                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
+                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-section g-0">
+                        <div class="col-md-2 card-div-img">
+                            <img src="/Assets/contact-icon.ico" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
+                                <p class="card-text mb-1">5512469451</p>
+                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
+                                <p class="card-text mb-1">Hamburg</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 card-edit">
+                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
+                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-section g-0">
+                        <div class="col-md-2 card-div-img">
+                            <img src="/Assets/contact-icon.ico" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -114,93 +152,55 @@
             <!-- END CARDS SECTION -->
         </section>
 
-        <!-- START MODAL -->
         <section>
             <!-- Button trigger modal -->
-            <a style="--clr:#ff22bb;--1:0;" class="add-button" id="addButton" data-bs-toggle="modal"
-                data-bs-target="#addContactModal">
-                <span>Add Contact</span>
-            </a>
-
+            <a style="--clr:#ff22bb;--1:0;" class="add-button" id="openModalButton"><span>Add Contact</span></a>
             <!-- Modal -->
-            <div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModal"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content text-bg-dark">
-
-                        <div class="modal-header">
-                            <h5 class="modal-title fw-bold" id="addContactModal">New Contact</h5>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                                <div class="col-12">
-                                    <label for="validationCustom01" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Name" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">Please provide a valid name.</div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="validationCustom02" class="form-label">Phone number</label>
-                                    <input type="tel" class="form-control" id="validationCustom02" placeholder="+12345678901" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">Please provide a valid phone number.</div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="validationCustom03" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="validationCustom03" placeholder="name@example.com" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">Please provide a valid email.</div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="validationCustom04" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="validationCustom04" placeholder="Address" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                    <div class="invalid-feedback">Please provide a valid address.</div>
-                                </div>
-                                <div class="col-12 d-flex justify-content-end">
-                                    <button class="btn btn-primary fs-5" type="submit">Save</button>
-                                </div>
-                            </form>
-                        </div>
-
-
+            <div class="addContactModal" id="addContactModal">
+                <div class="modalBox text-bg-dark" id="modalBox">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold neon" id="ModalLabel">New Contact</h5>
+                        <button type="button" class="btn btn-danger" id="closeModalButton">X</button>
                     </div>
+                    <form class="formNewContact row g-3 needs-validation" id="formNewContact" novalidate>
+                        <div class="col-12">
+                            <label for="newName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="newName" placeholder="Name" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid name.</div>
+                        </div>
+                        <div class="col-12">
+                            <label for="newPhone" class="form-label">Phone number</label>
+                            <input type="tel" class="form-control" id="newPhone" placeholder="+12345678901" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid phone number.</div>
+                        </div>
+                        <div class="col-12">
+                            <label for="newEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="newEmail" placeholder="name@example.com" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid email.</div>
+                        </div>
+                        <div class="col-12">
+                            <label for="newAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="newAddress" placeholder="Address" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid address.</div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <button class="btn btn-primary fs-5 mt-3" type="submit">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
-        <!-- END MODAL -->
-
-
+        
     </div>
 
     <!-- bootstrap JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
-
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-    </script>
-
 </body>
 
 </html>

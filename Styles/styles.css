@@ -16,7 +16,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1493673272479-a20888bcee10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/Assets/gilles-lambert-mSK5nNsAsLY-unsplash.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -54,9 +54,8 @@ body {
   margin: 50px 0;
 }
 
-.form-control {
+.search-container .form-control {
   background: rgba(255, 255, 255, 0.9);
-  font-size: 22px;
   border-radius: 15px;
 }
 
@@ -116,14 +115,11 @@ body {
 .bi-trash3-fill {
   color: red;
 }
-
+/* ////////////////////////////////////////////////////////////////// */
 .add-button {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-}
-
-.add-button {
+  bottom: 0;
+  right: 0;
   padding: 20px 60px;
   display: flex;
   justify-content: center;
@@ -174,7 +170,7 @@ body {
   content: '';
   position: absolute;
   inset: 4px;
-  background: #0e1538;
+  background: #5B8C4D;
 }
 
 .add-button:hover:after {
@@ -184,22 +180,51 @@ body {
 .add-button span {
   position: relative;
   z-index: 1;
-  font-size: 2em;
+  font-size: 1rem;
   color: #fff;
-  opacity: 0.5;
+  opacity: 0.7;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  /* letter-spacing: 5px; */
   transition: 0.5s;
 }
 
 .add-button:hover span {
   opacity: 1;
 }
-
-.modal {
+/* ////////////////////////////////////////////////////////////////// */
+.addContactModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(0, 0, 0, 0.9);
 }
 
-.modal-content {
+.OpenModal {
+  visibility: visible;
+  z-index: 10;
+}
+
+.modalBox {
+  max-width: 500px;
+  margin: 16px;
+  padding: 20px 16px;
+  border-radius: 20px;
   box-shadow: 0 0 0.9em greenyellow;
+}
+
+.modalBox .modal-header{
+  padding-bottom: 15px;
+  border-bottom: solid 1px greenyellow;
+}
+
+.formNewContact {
+  margin-top: 5px;
 }
