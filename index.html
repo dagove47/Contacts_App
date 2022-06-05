@@ -29,9 +29,11 @@
                 <input class="form-control search-card" id="search-card" type="search" placeholder="Search contact"
                     aria-label="Search" data-search>
             </div>
-            <!-- START CARDS CONTAINER -->
-            <div class="contacts-container" id="contactsContainer">
-
+            <!-- CARDS CONTAINER -->
+            <div class="contacts-container" id="contactsContainer" data-contacts-container></div>
+            
+            <!-- CARDS TEMPLATE -->
+            <template data-contact-template>
                 <div class="card mb-3">
                     <div class="card-section g-0">
                         <div class="col-md-2 card-div-img">
@@ -39,117 +41,20 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
-                                <p class="card-text mb-1">5512469451</p>
-                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
-                                <p class="card-text mb-1">Hamburg</p>
+                                <h5 class="card-title fw-bold mb-2" data-name></h5>
+                                <p class="card-text mb-1" data-phone></p>
+                                <p class="card-text mb-1" data-email></p>
+                                <p class="card-text mb-1" data-address></p>
                             </div>
                         </div>
                         <div class="col-md-2 card-edit">
-                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
-                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
+                            <div class="edit-button" id="editContactBtn"><em class="bi bi-pencil-fill"></em></div>
+                            <div class="edit-button" id="deleteContactBtn" onclick="deleteContact(this)"><em class="bi bi-trash3-fill"></em></div>
                         </div>
                     </div>
                 </div>
+            </template>
 
-                <div class="card mb-3">
-                    <div class="card-section g-0">
-                        <div class="col-md-2 card-div-img">
-                            <img src="Assets/contact-icon.ico" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
-                                <p class="card-text mb-1">5512469451</p>
-                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
-                                <p class="card-text mb-1">Hamburg</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 card-edit">
-                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
-                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-section g-0">
-                        <div class="col-md-2 card-div-img">
-                            <img src="Assets/contact-icon.ico" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
-                                <p class="card-text mb-1">5512469451</p>
-                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
-                                <p class="card-text mb-1">Hamburg</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 card-edit">
-                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
-                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-section g-0">
-                        <div class="col-md-2 card-div-img">
-                            <img src="Assets/contact-icon.ico" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
-                                <p class="card-text mb-1">5512469451</p>
-                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
-                                <p class="card-text mb-1">Hamburg</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 card-edit">
-                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
-                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-section g-0">
-                        <div class="col-md-2 card-div-img">
-                            <img src="Assets/contact-icon.ico" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
-                                <p class="card-text mb-1">5512469451</p>
-                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
-                                <p class="card-text mb-1">Hamburg</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 card-edit">
-                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
-                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-section g-0">
-                        <div class="col-md-2 card-div-img">
-                            <img src="Assets/contact-icon.ico" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">Leonie Morgan</h5>
-                                <p class="card-text mb-1">5512469451</p>
-                                <p class="card-text mb-1">leoniemorgan@mail.com</p>
-                                <p class="card-text mb-1">Hamburg</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 card-edit">
-                            <div class="edit-button"><em class="bi bi-pencil-fill"></em></div>
-                            <div class="edit-button"><em class="bi bi-trash3-fill"></em></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- END CARDS SECTION -->
         </section>
 
         <section>
@@ -194,21 +99,27 @@
                 </div>
             </div>
         </section>
-        <!-- START FOOTER -->
-        <footer class="footer">
-            <div>
-                <div class="footer-header">A work by <a href="https://www.linkedin.com/in/david-gomez-v/">David
-                        Gómez</a></div>
-                <div class="footer-links col">
-                    <a href="https://www.linkedin.com/in/david-gomez-v/"><em class="bi bi-linkedin"></em></a>
-                    <a href="https://github.com/dagove47"><em class="bi bi-github"></em></a>
-                    <a href="https://www.facebook.com/david.venegas.986/"><em class="bi bi-facebook"></em></a>
-                </div>
-            </div>
-        </footer>
-        <!-- END FOOTER -->
+        
         
     </div>
+    <!-- START FOOTER -->
+    <footer class="footer">
+        <div>
+            <div class="footer-header">A work by <a href="https://www.linkedin.com/in/david-gomez-v/">David
+                    Gómez</a></div>
+            <div class="footer-links col">
+                <a href="https://www.linkedin.com/in/david-gomez-v/"><em class="bi bi-linkedin"></em></a>
+                <a href="https://github.com/dagove47"><em class="bi bi-github"></em></a>
+                <a href="https://www.facebook.com/david.venegas.986/"><em class="bi bi-facebook"></em></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function deleteContact(id) {
+            console.log(id.parentNode.parentNode);
+        }
+    </script>
+    <!-- END FOOTER -->
 
     <!-- bootstrap JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

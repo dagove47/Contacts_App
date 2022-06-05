@@ -17,7 +17,7 @@ a {
 }
 
 .containerStyle {
-  min-height: 100vh;
+  min-height: 85vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -242,8 +242,7 @@ a {
   align-items: center;
   height: 15vh;
   width: 100%;
-  margin: 50px 0 0 0;
-  background: rgba(0, 181, 204, 0.3);
+  background: rgba(0, 181, 204, 0.4);
   color: #fff;
   font-size: 20px;
   font-style: italic;
