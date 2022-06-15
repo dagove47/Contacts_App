@@ -106,6 +106,20 @@ formNewContact.addEventListener("submit", (e) => {
 
 })
 
+function deleteContact(elem) {
+
+    let selectedCard = elem.parentNode.parentNode.parentNode;
+    let selectedCardToken = selectedCard.dataset.idCard;
+
+    for(let i = 0; i < allCards.length; i++) {
+        
+        if(allCards[i].token === selectedCardToken) {
+            allCards.splice(i, 1);
+            createCards(allCards);
+        }
+    }
+}
+
 function tokenId() {
     let newToken = '';
     let tokenCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
