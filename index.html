@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-md-2 card-edit">
-                            <div class="edit-button" id="editContactBtn"><em class="bi bi-pencil-fill"></em></div>
+                            <div class="edit-button" id="editContactBtn" onclick="editContact(event)"><em class="bi bi-pencil-fill"></em></div>
                             <div class="edit-button" id="deleteContactBtn" onclick="deleteContact(this)"><em class="bi bi-trash3-fill"></em></div>
                         </div>
                     </div>
@@ -98,10 +98,9 @@
                     </form>
                 </div>
             </div>
-        </section>
-        
-        
+        </section>    
     </div>
+
     <!-- START FOOTER -->
     <footer class="footer">
         <div>
@@ -114,11 +113,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        function deleteContact(id) {
-            console.log(id.parentNode.parentNode);
-        }
-    </script>
     <!-- END FOOTER -->
 
     <!-- bootstrap JavaScript Bundle with Popper -->
