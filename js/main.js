@@ -107,5 +107,16 @@ formNewContact.addEventListener("submit", (e) => {
 })
 
 function tokenId() {
-    return (Math.floor(Math.random() * (9999999999999 + 1)) + Date.now());
+    let newToken = '';
+    let tokenCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let tokenLength = 15;
+
+    do {
+        let tokenChar = tokenCharacters.charAt(Math.floor(Math.random() * tokenCharacters.length));
+        newToken += tokenChar;
+        tokenLength--; 
+    }
+    while(tokenLength > 0);
+
+    return newToken;
 }
