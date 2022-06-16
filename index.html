@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-md-2 card-edit">
-                            <div class="edit-button" id="editContactBtn" onclick="editContact(event)"><em class="bi bi-pencil-fill"></em></div>
+                            <div class="edit-button" id="editContactBtn" onclick="editContact(this)"><em class="bi bi-pencil-fill"></em></div>
                             <div class="edit-button" id="deleteContactBtn" onclick="deleteContact(this)"><em class="bi bi-trash3-fill"></em></div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
             <div class="addContactModal" id="addContactModal">
                 <div class="modalBox text-bg-dark" id="modalBox">
                     <div class="modal-header">
-                        <h5 class="modal-title fw-bold neon" id="ModalLabel">New Contact</h5>
+                        <h5 class="modal-title fw-bold neon" id="modalLabel">New Contact</h5>
                         <button type="button" class="btn btn-danger" id="closeModalButton"><em class="bi bi-x-lg"></em></button>
                     </div>
                     <form class="formNewContact row g-3 needs-validation" id="formNewContact" novalidate>

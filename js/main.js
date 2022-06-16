@@ -4,6 +4,7 @@ const modalBox = document.getElementById('modalBox');
 const openModalButton = document.querySelector("#openModalButton");
 const closeModalButton = document.querySelector("#closeModalButton");
 
+const modalLabel = document.getElementById('modalLabel');
 const formNewContact = document.querySelector("#formNewContact");
 const newName = document.querySelector("#newName");
 const newPhone = document.querySelector("#newPhone");
@@ -13,15 +14,18 @@ const newAddress = document.querySelector("#newAddress");
 const contactsContainer = document.querySelector("[data-contacts-container]");
 const contactCardTemplate = document.querySelector("[data-contact-template]");
 
-const deleteContactBtn = document.getElementById('deleteContactBtn');
-const editContactBtn = document.getElementById('editContactBtn');
-
-
 const allCards = [];
+let isEdit = false;
+let editingCard = '';
 
 
 function openCloseModal() {
     addContactModal.classList.toggle("OpenModal");
+    modalLabel.textContent = "New Contact";
+    let formInputs = formNewContact.querySelectorAll("input");
+    formInputs.forEach(input => input.value = '');
+    formNewContact.classList.remove('was-validated');
+    isEdit = false;
 }
 
 openModalButton.addEventListener("click", (e) => {
@@ -39,8 +43,6 @@ addContactModal.addEventListener("click", (e) => {
     e.stopPropagation();
     openCloseModal();
 })
-
-
 
 class Card {
     constructor(name, phone, email, address, token) {
@@ -85,26 +87,61 @@ formNewContact.addEventListener("submit", (e) => {
     e.stopPropagation();
     e.preventDefault();
 
-    let formInputs = formNewContact.querySelectorAll("input");
-
     if (!formNewContact.checkValidity()) {
         formNewContact.classList.add('was-validated');
     } else {
 
-        let nameValue = newName.value;
-        let phoneValue = newPhone.value;
-        let emailValue = newEmail.value;
-        let addressValue = newAddress.value;
-        let tokenValue = tokenId();
+        if(isEdit) {
+            
+            for(let prop of allCards) {
+                if(prop.token === editingCard) {
+                    prop.name = newName.value;
+                    prop.phone = newPhone.value;
+                    prop.email = newEmail.value;
+                    prop.address = newAddress.value;
+                    
+                    createCards(allCards);
+                    openCloseModal();
+                }
+            }
 
-        addContactInfo(nameValue, phoneValue, emailValue, addressValue, tokenValue);
-        createCards(allCards);
-        formInputs.forEach(input => input.value = '');
-        formNewContact.classList.remove('was-validated');
-        openCloseModal();
+        } else {
+            let nameValue = newName.value;
+            let phoneValue = newPhone.value;
+            let emailValue = newEmail.value;
+            let addressValue = newAddress.value;
+            let tokenValue = tokenId();
+
+            addContactInfo(nameValue, phoneValue, emailValue, addressValue, tokenValue);
+            createCards(allCards);
+            
+            openCloseModal();
+        }
     }
-
 })
+
+function editContact(elem) {
+
+    const selectedCard = elem.parentNode.parentNode.parentNode;
+    const selectedCardToken = selectedCard.dataset.idCard;
+
+    for(let card of allCards) {
+        
+        if(card.token === selectedCardToken) {
+            openCloseModal();
+            isEdit = true;
+            modalLabel.textContent = "Edit Contact";
+
+            newName.value = card.name;
+            newPhone.value = card.phone;
+            newEmail.value = card.email;
+            newAddress.value = card.address;
+
+            editingCard = card.token;
+        }
+    }
+}
+
 
 function deleteContact(elem) {
 
