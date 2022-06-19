@@ -1,4 +1,5 @@
 const addContactModal = document.getElementById('addContactModal');
+const searchInput = document.querySelector("[data-search]");
 
 const modalBox = document.getElementById('modalBox');
 const openModalButton = document.querySelector("#openModalButton");
@@ -18,6 +19,23 @@ const allCards = [];
 let isEdit = false;
 let editingCard = '';
 
+searchInput.addEventListener("input", e => {
+    
+    const value = e.target.value.toLowerCase();
+
+    allCards.forEach(contact => {
+        const isVisible = contact.name.toLowerCase().includes(value) || contact.phone.toLowerCase().includes(value) || contact.email.toLowerCase().includes(value) || contact.address.toLowerCase().includes(value);
+
+        if(!isVisible){
+            contact.visible = false;
+        } else {
+            contact.visible = true;
+        }
+        
+        createCards(allCards);
+    })
+
+})
 
 function openCloseModal() {
     addContactModal.classList.toggle("OpenModal");
@@ -45,17 +63,18 @@ addContactModal.addEventListener("click", (e) => {
 })
 
 class Card {
-    constructor(name, phone, email, address, token) {
+    constructor(name, phone, email, address, token, visible) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.token = token;
+        this.visible = visible
     }
 }
 
-function addContactInfo(name, phone, email, address, token) {
-    let newCard = new Card(name, phone, email, address, token);
+function addContactInfo(name, phone, email, address, token, visible) {
+    let newCard = new Card(name, phone, email, address, token, visible);
     allCards.push(newCard);
 }
 
@@ -64,23 +83,24 @@ function createCards(data) {
     contactsContainer.textContent = '';
 
     for(let prop of data) {
-        
-        const card = contactCardTemplate.content.cloneNode(true).children[0];
 
-        const nameContactCard = card.querySelector("[data-name]");
-        const phoneContactCard = card.querySelector("[data-phone]");
-        const emailContactCard = card.querySelector("[data-email]");
-        const addressContactCard = card.querySelector("[data-address]");
+        if(prop.visible) {
+            const card = contactCardTemplate.content.cloneNode(true).children[0];
 
-        nameContactCard.textContent = prop.name;
-        phoneContactCard.textContent = prop.phone;
-        emailContactCard.textContent = prop.email;
-        addressContactCard.textContent = prop.address;
-        card.dataset.idCard = prop.token;
+            const nameContactCard = card.querySelector("[data-name]");
+            const phoneContactCard = card.querySelector("[data-phone]");
+            const emailContactCard = card.querySelector("[data-email]");
+            const addressContactCard = card.querySelector("[data-address]");
 
-        contactsContainer.appendChild(card);
+            nameContactCard.textContent = prop.name;
+            phoneContactCard.textContent = prop.phone;
+            emailContactCard.textContent = prop.email;
+            addressContactCard.textContent = prop.address;
+            card.dataset.idCard = prop.token;
+
+            contactsContainer.appendChild(card);
+        }
     }
-
 }
 
 formNewContact.addEventListener("submit", (e) => {
@@ -111,8 +131,9 @@ formNewContact.addEventListener("submit", (e) => {
             let emailValue = newEmail.value;
             let addressValue = newAddress.value;
             let tokenValue = tokenId();
+            let visibleValue = true;
 
-            addContactInfo(nameValue, phoneValue, emailValue, addressValue, tokenValue);
+            addContactInfo(nameValue, phoneValue, emailValue, addressValue, tokenValue, visibleValue);
             createCards(allCards);
             
             openCloseModal();
