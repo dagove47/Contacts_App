@@ -62,10 +62,11 @@ a {
 }
 
 .search-container .form-control {
+  max-width: 600px;
   background: rgba(20, 21, 22, 0.7);
   border-color: #adff2f;
   border-radius: 15px;
-  max-width: 600px;
+  color: #fff;
 }
 
 .search-card {
@@ -101,7 +102,7 @@ a {
 }
 
 .card img {
-  max-width: 80%;
+  max-width: 95px;
   border-radius: 50px;
 }
 
@@ -112,9 +113,13 @@ a {
 }
 
 .edit-button {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(173, 255, 47, 0.2);
   padding: 10px;
-  box-shadow: 0 0 0.2em #adff2f;
+  margin: 0 5px 0 0;
+}
+
+.edit-button:hover {
+  background: rgba(255, 34, 187, 0.4);
 }
 
 .bi-pencil-fill {
@@ -124,6 +129,7 @@ a {
 .bi-trash3-fill {
   color: #ff0000;
 }
+
 /* ////////////////////////////////////////////////////////////////// */
 .add-button {
   position: fixed;
@@ -200,6 +206,7 @@ a {
 .add-button:hover span {
   opacity: 1;
 }
+
 /* ////////////////////////////////////////////////////////////////// */
 .addContactModal {
   position: fixed;
@@ -228,7 +235,7 @@ a {
   box-shadow: 0 0 0.9em #adff2f;
 }
 
-.modalBox .modal-header{
+.modalBox .modal-header {
   padding-bottom: 15px;
   border-bottom: solid 1px #adff2f;
 }
@@ -236,7 +243,6 @@ a {
 .formNewContact {
   margin-top: 5px;
 }
-
 
 .footer {
   display: flex;
@@ -283,3 +289,12 @@ a {
   color: #00b5cc;
 }
 
+@media only screen and (min-width: 992px) {
+  .main-title {
+    margin: 2rem 1.5rem 1rem 1.5rem;
+  }
+
+  .search-container {
+    margin: 20px 0 30px 0;
+  }
+}
